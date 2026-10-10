@@ -1,0 +1,30 @@
+#!name = 通行密钥登录修复
+#!desc = 让 iPhone 开着 Loon 也能扫电脑上的通行密钥二维码。做两件事：① Apple 鉴权与钥匙串域名走直连；② 把通行密钥相关域名排除出 MITM 解密（这一条是关键）。本插件不改变隧道域名 ua5v.com 的分流方向。
+#!author = 本地生成
+#!homepage = https://nsloon.app/docs/Plugin/
+#!icon = https://raw.githubusercontent.com/Wansensr/loon-plugins/main/apple-icon.png
+#!system = iOS,iPadOS
+#!system_version = 15
+#!loon_version = 3.2.1(733)
+#!tag = 工具,修复
+#!type = normal
+
+[General]
+
+[Rule]
+DOMAIN-SUFFIX,apple.com,DIRECT
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,icloud.com.cn,DIRECT
+DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+DOMAIN-SUFFIX,aaplimg.com,DIRECT
+DOMAIN-SUFFIX,entrust.net,DIRECT
+
+[Rewrite]
+
+[Host]
+
+[Script]
+
+[MITM]
+hostname = -*.apple.com,-*.icloud.com,-*.icloud.com.cn,-*.apple-cloudkit.com,-*.aaplimg.com,-*.ua5v.com
