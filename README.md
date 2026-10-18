@@ -48,3 +48,19 @@ https://raw.githubusercontent.com/Wansensr/loon-plugins/main/rules/Global.list,M
 ```
 
 顺序建议为 Lan → China → Proxy → Global：让中国域名优先直连，避免被后面的 Global 规则抢走。
+## GeoIP / ASN 数据库（Loon）
+
+以下文件来自本机 Clash Verge 的 MMDB 数据，可直接用于 Loon 的 `geoip-url` / `ipasn-url`。请自行确认数据库来源与再分发授权。
+
+| 文件 | Loon 配置项 | 地址 |
+| --- | --- | --- |
+| `Country.mmdb` | `geoip-url` | `https://raw.githubusercontent.com/Wansensr/loon-plugins/main/geoip/Country.mmdb` |
+| `ASN.mmdb` | `ipasn-url` | `https://raw.githubusercontent.com/Wansensr/loon-plugins/main/geoip/ASN.mmdb` |
+
+示例：
+
+```ini
+[General]
+geoip-url = https://raw.githubusercontent.com/Wansensr/loon-plugins/main/geoip/Country.mmdb
+ipasn-url = https://raw.githubusercontent.com/Wansensr/loon-plugins/main/geoip/ASN.mmdb
+```
