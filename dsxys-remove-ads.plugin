@@ -1,0 +1,90 @@
+#!name = 大师兄影视 · 去开屏广告
+#!desc = 针对 iOS 大师兄影视的启动页广告，拦截 TopOn/AnyThink、Smartdigimkt、Sigmob、穿山甲、优量汇、快手和百度广告 SDK 的配置、竞价与上报域名。按域名拒绝，不需要 MITM 证书。
+#!author = Codex
+#!homepage = https://github.com/Wansensr/loon-plugins
+#!system = iOS,iPadOS
+#!system_version = 15
+#!loon_version = 3.2.1(733)
+#!date = 2026-10-23
+#!tag = 去广告,影视
+#!type = normal
+
+[General]
+
+[Rule]
+# TopOn / AnyThink 聚合广告
+DOMAIN-SUFFIX,anythinktech.com,REJECT
+DOMAIN-SUFFIX,anythink.com,REJECT
+DOMAIN-SUFFIX,birdgesdk.com,REJECT
+DOMAIN-SUFFIX,toponadss.com,REJECT
+DOMAIN-SUFFIX,tpbid.com,REJECT
+
+# Smartdigimkt / ADX / 聚合广告
+DOMAIN-SUFFIX,smartdigimkt.com,REJECT
+DOMAIN-SUFFIX,ubixioe.com,REJECT
+DOMAIN-SUFFIX,1rtb.net,REJECT
+DOMAIN-SUFFIX,1rtb.com,REJECT
+DOMAIN-SUFFIX,adintl.cn,REJECT
+DOMAIN-SUFFIX,adn-plus.com.cn,REJECT
+DOMAIN-SUFFIX,ad-scope.com.cn,REJECT
+DOMAIN-SUFFIX,bridgeoos.com,REJECT
+DOMAIN,sdktmp.hubcloud.com.cn,REJECT
+DOMAIN-SUFFIX,zhangyuyidong.cn,REJECT
+DOMAIN-SUFFIX,puata.info,REJECT
+
+# Sigmob
+DOMAIN-SUFFIX,sigmob.cn,REJECT
+
+# 穿山甲 / Pangle / CSJ
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN,mon.snssdk.com,REJECT
+DOMAIN,mon.toutiao.com,REJECT
+DOMAIN,mon.toutiaocloud.com,REJECT
+DOMAIN,mon.toutiaocloud.net,REJECT
+DOMAIN,monsetting.toutiao.com,REJECT
+
+# 腾讯优量汇 / GDT
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN-SUFFIX,gdtimg.com,REJECT
+DOMAIN,tdid.m.qq.com,REJECT
+DOMAIN,turingminipro.sparta.html5.qq.com,REJECT
+DOMAIN,secureserver213.sparta.html5.qq.com,REJECT
+
+# 快手广告
+DOMAIN,open.e.kuaishou.com,REJECT
+DOMAIN,open.e.kuaishou.cn,REJECT
+DOMAIN,s.e.kuaishou.com,REJECT
+DOMAIN,api.kuaishouzt.com,REJECT
+DOMAIN,api.kwaizt.com,REJECT
+DOMAIN,zt.gifshow.com,REJECT
+DOMAIN,ulog-sdk.gifshow.com,REJECT
+DOMAIN,ulog-sdk.ksapisrv.com,REJECT
+DOMAIN-SUFFIX,kskwai.com,REJECT
+DOMAIN-SUFFIX,gskwai.com,REJECT
+
+# 百度联盟广告
+DOMAIN,ada.baidu.com,REJECT
+DOMAIN,aden.baidu.com,REJECT
+DOMAIN,mobads.baidu.com,REJECT
+DOMAIN,mobads-logs.baidu.com,REJECT
+DOMAIN,mobads-pre-config.bj.bcebos.com,REJECT
+DOMAIN,mobads-pre-config.cdn.bcebos.com,REJECT
+DOMAIN,cpro.baidustatic.com,REJECT
+DOMAIN,cpu-openapi.baidu.com,REJECT
+DOMAIN,render-server.cdn.bcebos.com,REJECT
+DOMAIN,wn.pos.baidu.com,REJECT
+DOMAIN,union.baidu.com,REJECT
+
+# 旧版大师兄影视广告配置域名（兼容旧版本）
+DOMAIN-SUFFIX,ailbaba.me,REJECT
+
+[Rewrite]
+
+[Host]
+
+[Script]
+
+[MITM]

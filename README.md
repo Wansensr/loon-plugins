@@ -13,11 +13,30 @@ Loon 插件集合。
 
 ### 订阅地址
 
-```
+```text
 https://raw.githubusercontent.com/Wansensr/loon-plugins/main/passkey-fix.plugin
 ```
 
 Loon → 配置 → 插件 → 右上角 `+` → 从 URL 添加。
+
+## dsxys-remove-ads.plugin — 大师兄影视去开屏广告
+
+针对 iOS 大师兄影视的启动页广告，拦截 TopOn/AnyThink、Smartdigimkt、Sigmob、穿山甲、优量汇、快手和百度等广告 SDK 的配置、竞价与上报域名。按域名拒绝，不需要 MITM 证书。
+
+### 订阅地址
+
+```text
+https://raw.githubusercontent.com/Wansensr/loon-plugins/main/dsxys-remove-ads.plugin
+```
+
+### 一键导入
+
+```text
+https://www.nsloon.com/openloon/import?plugin=https%3A%2F%2Fraw.githubusercontent.com%2FWansensr%2Floon-plugins%2Fmain%2Fdsxys-remove-ads.plugin
+```
+
+Loon → 配置 → 插件 → 右上角 `+` → 从 URL 添加。
+
 ## Loon 分流规则集（geosite + blackmatrix7 合并）
 
 本目录下的规则由本机 Clash `geosite.dat` 与 blackmatrix7 的 Loon 规则集合并生成，已转换为 Loon 可直接读取的 `DOMAIN-SUFFIX,...` 等格式。
