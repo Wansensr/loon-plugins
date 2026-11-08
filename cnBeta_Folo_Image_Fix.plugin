@@ -1,0 +1,13 @@
+#!name = cnBeta 图片修复 - Folo 专用
+#!desc = 修复 cnBeta 图片防盗链，并将 Folo 失败的 cnBeta 图片代理转换为原图直链
+#!loon_version = 3.5.1(978)
+#!date = 2026-11-09
+
+[Rewrite]
+# 仅处理 Folo 中由 cnBeta 原图转换而来的图片代理请求
+request if ${url} ~= /^https:\/\/img\.folo\.is\/\?url=https%3A%2F%2Fstatic\.cnbetacdn\.com%2Farticle%2F(\d{4})%2F(\d{4})%2F([A-Za-z0-9._-]+\.(?:jpe?g|png|webp|gif))(?:&.*)?$/i as cbimg then url.replace("https://static.cnbetacdn.com/article/${cbimg.1}/${cbimg.2}/${cbimg.3}") | request.header.set("Referer", "https://www.cnbeta.com.tw/") | request.header.del("Origin")
+# 修复直接访问 cnBeta 图床时缺失或错误的 Referer
+request if ${url} ~= /^https:\/\/static\.cnbetacdn\.com\// then request.header.set("Referer", "https://www.cnbeta.com.tw/") | request.header.del("Origin")
+
+[Mitm]
+hostname = static.cnbetacdn.com, img.folo.is
