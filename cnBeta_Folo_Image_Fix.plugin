@@ -1,5 +1,6 @@
-#!name = cnBeta 图片修复 - Folo 专用
+#!name = cnBeta 图片修复
 #!desc = 修复 cnBeta 图片防盗链，并将 Folo 失败的 cnBeta 图片代理转换为原图直链
+#!icon = https://raw.githubusercontent.com/RSSNext/Folo/dev/apps/mobile/assets/icon.png
 #!loon_version = 3.5.1(978)
 #!date = 2026-11-09
 
